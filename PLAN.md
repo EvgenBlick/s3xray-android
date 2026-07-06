@@ -32,21 +32,18 @@ Build a simplified Android VPN client based on the local Flutter app, with first
 
 ## Current Build Status
 
-APK build is not finished yet.
+Debug APK build is working.
 
-The last `flutter build apk --debug` failed because Gradle was launched with Java 8:
+Built APK:
 
-```text
-Dependency requires at least JVM runtime version 11. This build uses a Java 8 JVM.
+```powershell
+C:\Users\admin\Desktop\S3XRAY-Flutter-debug.apk
 ```
 
-Next step is to point Gradle/Flutter to Java 17 from Android Studio or an installed JDK, then rebuild.
+Gradle is pinned to Android Studio JBR in `vless_vpn_app/android/gradle.properties` because the system `java` command points to Java 8.
 
 ## Next
 
-- Fix local Java/JDK selection for Gradle.
-- Build debug APK.
-- Copy APK to desktop.
 - Install APK on connected Android device via adb.
 - Test:
   - manual `s3x://` import

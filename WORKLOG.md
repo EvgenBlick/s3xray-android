@@ -32,16 +32,18 @@
 
 ### Build blocker
 
-`flutter build apk --debug` currently fails because Gradle runs with Java 8. The next fix is to set Java 17 for the build.
+Fixed. Gradle now uses Android Studio JBR via `org.gradle.java.home`.
+
+### APK build
+
+Built debug APK:
 
 ```text
-Dependency requires at least JVM runtime version 11. This build uses a Java 8 JVM.
+C:\Users\admin\Desktop\S3XRAY-Flutter-debug.apk
 ```
 
 ### Pending verification
 
-- Debug APK build.
-- Desktop APK copy.
 - adb install.
 - Real S3X deeplink import from Telegram bot.
 - VPN runtime start.
