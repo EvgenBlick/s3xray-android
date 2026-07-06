@@ -44,7 +44,6 @@ Gradle is pinned to Android Studio JBR in `vless_vpn_app/android/gradle.properti
 
 ## Next
 
-- Install APK on connected Android device via adb.
 - Test:
   - manual `s3x://` import
   - Telegram bot deeplink import
@@ -53,6 +52,7 @@ Gradle is pinned to Android Studio JBR in `vless_vpn_app/android/gradle.properti
   - S3 HeadBucket/DNS behavior
   - download/upload speed through VPS target.
 - Rename app/package/labels from the original brand to S3XRAY.
+- Change package or uninstall old WINGSV during tests if Android shows an app chooser for `s3x://`.
 - Remove unused cabinet/payment/auth UI after the S3X runtime is proven stable.
 - Port VK TURN mode from the WINGSV layout as a native helper binary plus Flutter control wrapper.
 - Add a non-secret config template for bot-generated `s3x://` payloads.

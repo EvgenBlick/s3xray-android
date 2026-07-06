@@ -42,9 +42,17 @@ Built debug APK:
 C:\Users\admin\Desktop\S3XRAY-Flutter-debug.apk
 ```
 
+Installed the APK on the connected Android device with adb.
+
+Verified Android `s3x://` activity registration. The device currently has two handlers:
+
+- `com.stockvpn.vless_vpn_app`
+- `wings.v`
+
+Android may show an app chooser until the old WINGSV build is removed or the package/scheme strategy is changed.
+
 ### Pending verification
 
-- adb install.
 - Real S3X deeplink import from Telegram bot.
 - VPN runtime start.
 - logcat inspection for fedarisha/S3 errors.
