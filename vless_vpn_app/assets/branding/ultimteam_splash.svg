@@ -1,0 +1,22 @@
+<svg width="900" height="320" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(450 154)">
+    <text
+      x="0"
+      y="0"
+      fill="#FFFFFF"
+      font-size="132"
+      font-weight="800"
+      font-family="DejaVu Sans, Sans"
+      letter-spacing="-4"
+      text-anchor="middle">Samurai Service</text>
+    <text
+      x="0"
+      y="110"
+      fill="#D1D5DB"
+      font-size="42"
+      font-weight="500"
+      font-family="DejaVu Sans, Sans"
+      letter-spacing="2.2"
+      text-anchor="middle">Secure VPN service</text>
+  </g>
+</svg>
