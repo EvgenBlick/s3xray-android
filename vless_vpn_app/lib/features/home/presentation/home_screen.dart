@@ -60,6 +60,8 @@ import '../../vless/domain/vless_profile.dart';
 import '../../vpn/application/server_latency_probe.dart';
 import '../../vpn/application/vpn_controller.dart';
 
+const bool kBypassAuthForS3xTesting = true;
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -365,6 +367,22 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   Future<void> _bootstrapImportSource() async {
     try {
+      if (kBypassAuthForS3xTesting) {
+        setState(() {
+          _isGuestModeEnabled = true;
+          _cabinetSnapshot = CabinetBootstrapSnapshot.initial;
+          _currentTab = HomeTab.vpn;
+        });
+        final String? savedLink = await _appPreferencesRepository
+            .loadLastImportLink();
+        if (!mounted || savedLink == null || savedLink.isEmpty) {
+          return;
+        }
+        _controller.text = savedLink;
+        await _parseLink(preserveCurrentOnFailure: true);
+        return;
+      }
+
       final bool resumedPendingOAuth = await _resumePendingOAuthLogin();
       if (resumedPendingOAuth || !mounted) {
         return;
@@ -1545,6 +1563,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     switch (_currentTab) {
       case HomeTab.vpn:
         if (_resolvedImport == null &&
+            !kBypassAuthForS3xTesting &&
             !_isGuestModeEnabled &&
             _cabinetSnapshot.state == CabinetBootstrapState.unauthenticated) {
           return AuthGatePanel(

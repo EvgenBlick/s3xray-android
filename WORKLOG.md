@@ -14,6 +14,7 @@
   - `vless_vpn_app/lib/features/s3x/application/s3x_link_parser.dart`
 - Updated `ImportLinkResolver` so `s3x://` imports become a runtime-config group.
 - Updated `HomeScreen` so pending/incoming S3X deeplinks are imported automatically.
+- Temporarily disabled cabinet authorization with `kBypassAuthForS3xTesting = true`.
 
 ### Xray runtime
 

@@ -27,6 +27,7 @@ Build a simplified Android VPN client based on the local Flutter app, with first
   - `armeabi-v7a`
 - Updated Android NDK version to the installed local version: `28.2.13676358`.
 - Enabled stderr logging for Xray process output, so fedarisha/S3 startup errors appear in logcat.
+- Temporarily bypassed cabinet authorization with `kBypassAuthForS3xTesting = true` in `HomeScreen`.
 - Ran `flutter pub get`.
 - Ran `flutter analyze`: no compile errors; one existing Flutter deprecation warning remains.
 
@@ -53,6 +54,7 @@ Gradle is pinned to Android Studio JBR in `vless_vpn_app/android/gradle.properti
   - download/upload speed through VPS target.
 - Rename app/package/labels from the original brand to S3XRAY.
 - Change package or uninstall old WINGSV during tests if Android shows an app chooser for `s3x://`.
+- Re-enable or fully remove cabinet authorization flow after S3X testing decision.
 - Remove unused cabinet/payment/auth UI after the S3X runtime is proven stable.
 - Port VK TURN mode from the WINGSV layout as a native helper binary plus Flutter control wrapper.
 - Add a non-secret config template for bot-generated `s3x://` payloads.
